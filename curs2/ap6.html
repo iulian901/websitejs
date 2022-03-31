@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="width: 100%; height:500px; border: solid 2px red" onload="salut()" onclick="countClick()">
+    <p id="num_of_clicks">0</p>
+    <textarea name="" id="" cols="30" rows="10" placeholder="Textarea demo"></textarea>
+
+
+    <script>
+        function salut() {
+            alert("Bine ai venit!");
+        }
+
+        var counter = 0;
+        function countClick() {
+            counter = counter + 1;
+            document.getElementById("num_of_clicks").innerHTML = "Number of Mouse clicks:" + counter;
+        }
+
+        window.addEventListener('beforeunload', (event) => {
+            // Cancel the event as stated by the standard.
+            event.preventDefault();
+            // Chrome requires returnValue to be set.
+            event.returnValue = "";
+        })
+        
+    </script>
+</body>
+</html>
